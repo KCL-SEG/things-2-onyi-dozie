@@ -4,10 +4,9 @@ from django import forms
 
 # Create your forms here.
 
-class ThingForm(forms.Form):
+class ThingForm(forms.ModelForm):
     class Meta: 
         model = Thing
-        exclude = ['created_at']
         fields = ['name','description','quantity']
         widgets = {
             'description': forms.Textarea(),
